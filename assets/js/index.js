@@ -33,6 +33,13 @@ $(document).ready(async function () {
 
     try {
         window.api.handle('custom-endpoint', (event, d) => function (event, d) {
+            if (d === undefined) {
+                getFlyerValues()
+                setEditorValues()
+                getEditorValues()
+                setFlyerValues()
+                return
+            }
             console.log(`data: ${d}`)
             parseData(d)
             setEditorValues()
