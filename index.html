@@ -10,38 +10,86 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
-<body style="min-width: 1920px;min-height: 947px;">
-    <div class="row text-center">
-        <div class="col" style="border-right-style: none;"><a class="btn btn-primary mt-5 me-2" role="button" id="imgBtn">Download Image</a><a class="btn btn-primary mt-5 ms-2" role="button" id="fileBtn">Save File</a>
-            <div id="froala-editor1">
-                <p> Open the console to see the <em>html.get</em> method working. </p>
+<body>
+    <div class="row text-start" style="margin: 0rem;">
+        <div class="col-4 text-center" id="editorCol" style="height: calc(100vh);overflow-y: scroll;overflow-x:hidden"><a class="btn btn-primary disabled mt-5 me-2 btn-disable grey" role="button" id="imgBtn">Download Image</a><a class="btn btn-primary disabled mt-5 ms-2 me-2 btn-disable grey" role="button" id="saveBtn">Save Template</a><a class="btn btn-primary disabled mt-5 ms-2 me-2 btn-disable grey" role="button" id="switchBtn">Switch Design</a><a class="btn btn-primary disabled mt-5 ms-2 btn-disable grey" role="button" id="refreshBtn">Refresh</a>
+            <h6 class="text-start" id="note" style="margin-top: 8px;margin-bottom: -16px;padding: 16px;">Note: Some actions like delete or using buttons on text editor do not update the flyer. To force refresh press spacebar and delete key, or delete and retype a character, or use the Refresh button.</h6>
+            <div id="e1">
+                <p>Please wait...</p>
+            </div>
+            <div id="e2">
+                <p>Please wait...</p>
+            </div>
+            <div id="e3">
+                <p>Please wait...</p>
+            </div>
+            <div id="e4">
+                <p>Please wait...</p>
+            </div>
+            <div id="e5">
+                <p>Please wait...</p>
+            </div>
+            <div id="e6">
+                <p>Please wait...</p>
+            </div>
+            <div id="e7">
+                <p>Please wait...</p>
             </div>
         </div>
-        <div class="col" id="flyerCol" style="background: url(&quot;assets/img/bg.jpg&quot;) no-repeat;background-size: cover;">
-            <div class="container">
+        <div class="col-6" id="flyerCol">
+            <div class="container" id="c1" style="background: url(&quot;assets/img/bg.jpg&quot;);/*display: none;*/">
                 <div class="row mb-2">
                     <div class="col mb-2"><img class="img-fluid mt-2" src="assets/img/logo-book-fly.png" width="44%"></div>
                 </div>
                 <div class="row mb-2">
-                    <div class="col-4 text-center align-self-end"><img class="img-thumbnail img-fluid w-75" src="assets/img/pic1.jpg" style="transform: translateY(38px) rotate(-16deg);position: relative;z-index: 1;"><img class="img-thumbnail img-fluid d-block w-75" src="assets/img/pic2.jpg" style="transform: translate(49px) rotate(-5deg);"><img class="img-thumbnail img-fluid w-75" src="assets/img/pic3.jpg" style="transform: translate(-31px) translateX(33px) translateY(-48px) rotate(15deg);"></div>
+                    <div class="col-4 text-center"><img class="img-thumbnail img-fluid w-75" src="assets/img/pic1.jpg" style="transform: translateY(38px) rotate(-16deg);position: relative;z-index: 1;"><img class="img-thumbnail img-fluid d-block w-75" src="assets/img/pic2.jpg" style="transform: translate(49px) rotate(-5deg);"><img class="img-thumbnail img-fluid w-75" src="assets/img/pic3.jpg" style="transform: translate(-31px) translateX(33px) translateY(-48px) rotate(15deg);"></div>
                     <div class="col align-self-center">
-                        <p class="fs-5 fw-bold text-center" style="margin-bottom: 4px;margin-left: -40px;margin-right: -40px;">WITH RAZA AND DUA MUBARAK OF AQA MOULA,<br><span style="color: rgb(255, 15, 0);">SYEDNA ALIQADAR MUFADDAL SAIFUDDIN (TUS).</span><br>WE HAVE ORGANISED AN EXCLUSIVE PACKAGE<br></p>
-                        <p class="fs-4 fw-bold text-center">DAR - KUN SAFAR -DAR<br>12 DAYS<br>9 DAYS KUN &amp; 3 DAYS MISR<br>19 MAY - 30 MAY 2023</p>
-                        <p class="fs-4 fw-normal text-center">USD <strong><span style="color: rgb(255, 0, 0);">1,570</span></strong><br>Per Person Adult</p>
-                        <p class="fs-6 fw-normal text-center"><strong><span style="text-decoration: underline;">PACKAGE INCLUDES</span></strong><br>FLIGHT TICKETS | VISAS | ZIYARAT | PYRAMIDS</p>
+                        <p class="fs-4 fw-bold text-center" id="p1" style="margin-bottom: 4px;margin-left: -40px;margin-right: -40px;margin-top:-80px; margin-bottom:40px">WITH RAZA AND DUA MUBARAK OF AQA MOULA,<br><span style="color: rgb(255, 15, 0);">SYEDNA ALIQADAR MUFADDAL SAIFUDDIN (TUS).</span><br>WE HAVE ORGANISED AN EXCLUSIVE PACKAGE<br></p>
+                        <p class="fs-4 fw-bold text-center" id="p2" style="margin-bottom:40px">DAR - KUN SAFAR -DAR<br>12 DAYS<br>9 DAYS KUN &amp; 3 DAYS MISR<br>19 MAY - 30 MAY 2023</p>
+                        <p class="fs-4 fw-normal text-center" id="p3" style="margin-bottom:40px">USD <strong><span style="color: rgb(255, 0, 0);">1,570</span></strong><br>Per Person Adult</p>
+                        <p class="fs-6 fw-normal text-center" id="p4"><strong><span style="text-decoration: underline;">PACKAGE INCLUDES</span></strong><br>FLIGHT TICKETS | VISAS | ZIYARAT | PYRAMIDS</p>
                     </div>
                 </div>
                 <div class="row mb-2">
                     <div class="col">
-                        <p class="fs-5 text-center"><strong>VACATION EXAMPLE GROUPS</strong><br>24 JUNE - 01 JULY<br>25 JUNE - 02 JULY<br>26 JUNE - 03 JULY<br>27 JUNE - 04 JULY<br>05 JULY - 12 JULY</p>
+                        <p class="fs-5 text-center" id="p5"><strong>VACATION EXAMPLE GROUPS</strong><br>24 JUNE - 01 JULY<br>25 JUNE - 02 JULY<br>26 JUNE - 03 JULY<br>27 JUNE - 04 JULY<br>05 JULY - 12 JULY</p>
                     </div>
                     <div class="col">
-                        <p class="fs-5 text-center"><strong>VACATION EXAMPLE GROUPS</strong><br>24 JUNE - 01 JULY<br>25 JUNE - 02 JULY<br>26 JUNE - 03 JULY<br>27 JUNE - 04 JULY<br>05 JULY - 12 JULY</p>
+                        <p class="fs-5 text-center" id="p6"><strong>VACATION EXAMPLE GROUPS</strong><br>24 JUNE - 01 JULY<br>25 JUNE - 02 JULY<br>26 JUNE - 03 JULY<br>27 JUNE - 04 JULY<br>05 JULY - 12 JULY</p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col align-self-end">
-                        <p class="text-nowrap text-start mt-5" style="color: #00337d;position: absolute;margin-left: 12px"><strong><span style="text-decoration: underline;">KINDLY CONTACT ON BELOW NUMBERS:</span></strong><br>1. Tasneem Ben: <img src="assets/img/whatsapp.png" width="24" height="24">&nbsp;+255 655 230586 | <img src="assets/img/gmail.png" width="24">&nbsp;tasneem@bookandflytz.com<br>2. Shk Yusuf Bhai Badri: <img src="assets/img/whatsapp.png" width="24" height="24">&nbsp;+255 786 006922<br>3. Aliasgar Bhai: <img src="assets/img/whatsapp.png" width="24" height="24">&nbsp;+255 788 531121 |&nbsp;&nbsp;<img src="assets/img/gmail.png" width="24">&nbsp;ali@bookandflytz.com</p><img class="img-fluid float-end mb-2" src="assets/img/logo-havra-travel.png" width="40%">
+                        <p class="text-nowrap text-start mt-5" id="p7" style="position: absolute;transform: translateY(80px);color: var(--bs-link-hover-color);"><strong><span style="text-decoration: underline;">KINDLY CONTACT ON BELOW NUMBERS:</span></strong><br>1. Tasneem Ben: <img src="assets/img/whatsapp.png" width="24" height="24">&nbsp;+255 655 230586 | <img src="assets/img/gmail.png" width="24">&nbsp;tasneem@bookandflytz.com<br>2. Shk Yusuf Bhai Badri: <img src="assets/img/whatsapp.png" width="24" height="24">&nbsp;+255 786 006922<br>3. Aliasgar Bhai: <img src="assets/img/whatsapp.png" width="24" height="24">&nbsp;+255 788 531121 |&nbsp;&nbsp;<img src="assets/img/gmail.png" width="24">&nbsp;ali@bookandflytz.com</p><img class="img-fluid float-end mb-4" src="assets/img/logo-havra-travel.png" width="44%">
+                    </div>
+                </div>
+            </div>
+            <div class="container" id="c1d2" style="display: none;background: url(&quot;assets/img/bg.jpg&quot;);">
+                <div class="row">
+                    <div class="col"><img class="img-fluid mt-2" src="assets/img/logo-book-fly.png" width="40%"></div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col text-center"><img class="img-thumbnail img-fluid w-25" src="assets/img/pic1.jpg" style="transform: translate(17px) rotate(-16deg);position: relative;z-index: 1;"><img class="img-thumbnail img-fluid w-25" src="assets/img/pic2.jpg" style="transform: rotate(-3deg);"><img class="img-thumbnail img-fluid w-25" src="assets/img/pic3.jpg" style="transform: translate(-31px) rotate(15deg);"></div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col">
+                        <p class="fs-4 fw-bold text-center" id="p1d2" style="margin-bottom: 4px;">WITH RAZA AND DUA MUBARAK OF AQA MOULA,<br><span style="color: rgb(255, 15, 0);">SYEDNA ALIQADAR MUFADDAL SAIFUDDIN (TUS).</span><br>WE HAVE ORGANISED AN EXCLUSIVE PACKAGE<br><br></p>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col align-self-center">
+                        <p class="fs-6 text-center mt-2" id="p5d2"><strong>VACATION EXAMPLE GROUPS</strong><br>24 JUNE - 01 JULY<br>25 JUNE - 02 JULY<br>26 JUNE - 03 JULY<br>27 JUNE - 04 JULY<br>05 JULY - 12 JULY</p>
+                        <p class="fs-6 text-center" id="p6d2"><strong>VACATION EXAMPLE GROUPS</strong><br>24 JUNE - 01 JULY<br>25 JUNE - 02 JULY<br>26 JUNE - 03 JULY<br>27 JUNE - 04 JULY<br>05 JULY - 12 JULY</p>
+                    </div>
+                    <div class="col">
+                        <p class="fs-4 fw-bold text-center" id="p2d2" style="margin-bottom:40px">DAR - KUN SAFAR -DAR<br>12 DAYS<br>9 DAYS KUN &amp; 3 DAYS MISR<br>19 MAY - 30 MAY 2023</p>
+                        <p class="fs-4 fw-normal text-center" id="p3d2" style="margin-bottom:40px">USD <strong><span style="color: rgb(255, 0, 0);">1,570</span></strong><br>Per Person Adult</p>
+                        <p class="fw-normal text-center" id="p4d2" style="margin-bottom:40px"><strong><span style="text-decoration: underline;">PACKAGE INCLUDES</span></strong><br>FLIGHT TICKETS | VISAS | ZIYARAT | PYRAMIDS</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col align-self-end">
+                        <p class="text-nowrap text-start" id="p7d2" style="position: absolute;margin-left: 24px;transform: translateY(30px);color: var(--bs-link-hover-color);"><strong><span style="text-decoration: underline;">KINDLY CONTACT ON BELOW NUMBERS:</span></strong><br>1. Tasneem Ben: <img src="assets/img/whatsapp.png" width="24" height="24">&nbsp;+255 655 230586 | <img src="assets/img/gmail.png" width="24">&nbsp;tasneem@bookandflytz.com<br>2. Shk Yusuf Bhai Badri: <img src="assets/img/whatsapp.png" width="24" height="24">&nbsp;+255 786 006922<br>3. Aliasgar Bhai: <img src="assets/img/whatsapp.png" width="24" height="24">&nbsp;+255 788 531121 |&nbsp;&nbsp;<img src="assets/img/gmail.png" width="24">&nbsp;ali@bookandflytz.com</p><img class="img-fluid float-end mb-4" src="assets/img/logo-havra-travel.png" width="50%">
                     </div>
                 </div>
             </div>
@@ -50,6 +98,7 @@
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/froala_editor.pkgd.min.js"></script>
+    <script src="assets/js/line_height.min.js"></script>
     <script src="assets/js/html2canvas.min.js"></script>
     <script src="assets/js/index.js"></script>
 </body>
