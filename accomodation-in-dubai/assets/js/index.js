@@ -1,6 +1,8 @@
 let e1, e2, e3, e4, e5
 let p1, p2, p3, p4, p5
 let p1k, p2k, p3k, p4k, p5k
+let w = 794
+let h = 1123
 
 const toolbarBtns = {
     'moreText': {
@@ -30,7 +32,7 @@ function reset() {
 
 $(document).on('DOMContentLoaded', function () {
     $('#setCustomBtn').addClass('disabled')
-    $('#resolutionBtn1').click()
+    $('#resolutionBtn2').click()
 })
 
 $(document).ready(async function () {
@@ -67,24 +69,38 @@ $('#resolutionBtn1').click(function () {
     $('#mainDiv').width(595 - actual)
     $('#mainDiv').height(842 - actual)
     $('#mainContainer').width(595 + 26 - actual)
+    w = 595
+    h = 842
+    $('#resHeader').text('Resolution (595 x 842)')
 })
 
 $('#resolutionBtn2').click(function () {
     $('#mainDiv').width(794 - actual)
     $('#mainDiv').height(1123 - actual)
     $('#mainContainer').width(794 + 26 - actual)
+    w = 794
+    h = 1123
+    $('#resHeader').text('Resolution (794 x 1123)')
 })
 
 $('#resolutionBtn3').click(function () {
     $('#mainDiv').width(1240 - actual)
     $('#mainDiv').height(1754 - actual)
     $('#mainContainer').width(1240 + 26 - actual)
+    w = 1240
+    h = 1754
+    $('#resHeader').text('Resolution (1240 x 1754)')
 })
 
 $('#setCustomBtn').click(function () {
-    $('#mainDiv').width(Number($('#widthInput').val()) - actual)
-    $('#mainDiv').height(Number($('#heightInput').val()) - actual)
-    $('#mainContainer').width(Number($('#widthInput').val()) + 26 - actual)
+    let newW = Number($('#widthInput').val())
+    let newH = Number($('#heightInput').val())
+    $('#mainDiv').width(newW - actual)
+    $('#mainDiv').height(newH - actual)
+    $('#mainContainer').width(newW + 26 - actual)
+    w = newW
+    h = newH
+    $('#resHeader').text(`Resolution (${w} x ${h})`)
 })
 
 $('#customCheckbox').click(function () {
@@ -102,7 +118,7 @@ $('#customCheckbox').click(function () {
 $('#imgBtn').click(function () {
     disable()
     let currDiv = '#mainDiv'
-    html2canvas($(currDiv)[0], { height: $(currDiv)[0].offsetHeight, scale: 2 }).then((canvas) => {
+    html2canvas($(currDiv)[0], { width: w, height: h }).then((canvas) => {
         let dataUrl = canvas.toDataURL('image/png')
         let link = document.createElement('a')
         link.download = 'flyer.png'
