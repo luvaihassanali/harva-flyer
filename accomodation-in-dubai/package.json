@@ -1,0 +1,15 @@
+{
+  "name": "accomodation-in-dubai",
+  "version": "1.0.0",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager . accomodation-in-dubai --overwrite"
+  },
+  "dependencies": {
+    "electron": "^24.4.0",
+    "electron-packager": "^17.1.1",
+    "electron-store": "^8.1.0"
+  }
+}

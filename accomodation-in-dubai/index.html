@@ -6,21 +6,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>accomodation-in-dubai</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/froala_editor.pkgd.min.css">
 </head>
 
-<body id="c1">
-    <div style="width: 600px;margin-left: 12px;">
-        <h5>Resolution</h5>
-        <div class="btn-group" role="group"><button class="btn btn-primary" id="resolutionBtn1" type="button" style="width: 120px;">595 x 842</button><button class="btn btn-primary" id="resolutionBtn2" type="button" style="width: 120px;">794 x 1123</button><button class="btn btn-primary" id="resolutionBtn3" type="button" style="width: 120px;">1240 x 1754</button><button class="btn btn-primary" id="resolutionBtn4" type="button" style="width: 120px;">2480 x 3508</button></div>
-        <h6 style="margin-top: 12px;"><input type="checkbox" id="customCheckbox" style="margin-right: 6px;"><span>Custom</span><button class="btn btn-success btn-sm" id="setCustomBtn" type="button" style="margin-left: 6px;margin-top: -4px;">Set</button></h6>
+<body>
+    <div id="controlDiv" style="width: 600px;margin-left: 12px;"><a class="btn btn-primary disabled mt-5 me-2 btn-disable grey" role="button" id="imgBtn">Download Image</a><a class="btn btn-primary disabled mt-5 ms-2 me-2 btn-disable grey" role="button" id="saveBtn">Save Template</a><a class="btn btn-primary disabled mt-5 ms-2 btn-disable grey" role="button" id="refreshBtn">Refresh</a>
+        <h5 style="margin-top: 8px;">Resolution</h5>
+        <div class="btn-group" role="group"><button class="btn btn-primary disabled btn-disable" id="resolutionBtn1" type="button" style="width: 120px;">595 x 842</button><button class="btn btn-primary disabled btn-disable" id="resolutionBtn2" type="button">794 x 1123</button><button class="btn btn-primary disabled btn-disable" id="resolutionBtn3" type="button" style="width: 120px;">1240 x 1754</button></div>
+        <h6 style="margin-top: 12px;"><input type="checkbox" id="customCheckbox" style="margin-right: 6px;"><span>Custom</span><button class="btn btn-success btn-sm disabled" id="setCustomBtn" type="button" style="margin-left: 6px;margin-top: -4px;">Set</button></h6>
         <div class="input-group" style="width: 192px;"><span class="input-group-text" style="width: 72px;height: 32px;">Width</span><input class="form-control" type="text" id="widthInput" style="height: 32px;" disabled="" placeholder="595"></div>
-        <div class="input-group" style="width: 192px;"><span class="input-group-text" style="width: 72px;height: 32px;">Height</span><input class="form-control" type="text" id="heightInput" style="height: 32px;" disabled="" placeholder="842"></div>
+        <div class="input-group" style="width: 192px;margin-bottom: 8px;"><span class="input-group-text" style="width: 72px;height: 32px;">Height</span><input class="form-control" type="text" id="heightInput" style="height: 32px;" disabled="" placeholder="842"></div>
+        <div id="e1">
+            <p>Please wait...</p>
+        </div>
+        <div id="e2">
+            <p>Please wait...</p>
+        </div>
+        <div id="e3">
+            <p>Please wait...</p>
+        </div>
+        <div id="e4">
+            <p>Please wait...</p>
+        </div>
+        <div id="e5">
+            <p>Please wait...</p>
+        </div>
     </div>
     <div class="border rounded-0 border-primary" id="mainContainer" style="margin: 12px;width: 621px;">
-        <div class="border rounded-0" id="mainDiv" style="width: 595px;height: 842px;margin: 12px;"><span> Fluid </span></div>
+        <div class="border rounded-0" id="mainDiv" style="width: 595px;height: 842px;margin: 12px;">
+            <div class="row" id="logoRow">
+                <div class="col"><img class="img-fluid" src="assets/img/logo.png" style="padding: -1rem;"></div>
+            </div>
+            <div class="row" id="headerRow">
+                <div class="col text-center">
+                    <h1 class="display-5" id="p1">ACCOMODATION IN DUBAI</h1>
+                </div>
+            </div>
+            <div class="row" id="pricesRow">
+                <div class="col text-center">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>LANDMARK HOTELS</td>
+                                    <td>3 * USD 55</td>
+                                </tr>
+                                <tr>
+                                    <td>CARLTON HOTELS</td>
+                                    <td>4 * USD 75</td>
+                                </tr>
+                                <tr>
+                                    <td>AVANI HOTELS</td>
+                                    <td>4 * USD 140</td>
+                                </tr>
+                                <tr>
+                                    <td>BEST WESTERN PLUS PEARL CREEK</td>
+                                    <td>4 * USD 75</td>
+                                </tr>
+                                <tr class="w-100">
+                                    <td colspan="2">APARTMENTS AND MANY MORE HOTELS AVAILABLE&nbsp;ON REQUEST<br></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <h5 id="p3"><strong><span style="color: black;">Per double room per&nbsp;night rate on bed and breakfast basis</span></strong><br><strong><span style="color: black;">Location: Deira Close&nbsp;to train stations</span></strong><br></h5>
+                </div>
+            </div>
+            <div class="row" id="contactRow">
+                <div class="col text-center">
+                    <p id="p4">For more details, please contact us on:<br></p>
+                    <div class="table-responsive" style="margin-right: 5rem;margin-left: 5rem;">
+                        <table class="table">
+                            <thead>
+                                <tr></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-start" style="border-width: 0px;">Whatsapp</td>
+                                    <td class="text-end" style="border-width: 0px;"><span style="color: black;">+971509215920</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-start" style="border-width: 0px;">Shk Yusuf bhai Badri</td>
+                                    <td class="text-end" style="border-width: 0px;"><span style="color: black;">+255786006922</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="container"><img class="img-thumbnail img-fluid" src="assets/img/banner.jpg"></div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/froala_editor.pkgd.min.js"></script>
+    <script src="assets/js/line_height.min.js"></script>
+    <script src="assets/js/html2canvas.min.js"></script>
     <script src="assets/js/index.js"></script>
 </body>
 
