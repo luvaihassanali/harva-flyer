@@ -1,8 +1,8 @@
-let e1, e2, e3, e4, e5
-let p1, p2, p3, p4, p5
-let p1k, p2k, p3k, p4k, p5k
-let w = 794
-let h = 1123
+let e0, e1, e2, e3, e4, e5, e6
+let p0, p1, p2, p3, p4, p5, p6
+let p0k, p1k, p2k, p3k, p4k, p5k, p6k
+let w = 595
+let h = 842
 
 const toolbarBtns = {
     'moreText': {
@@ -32,17 +32,19 @@ function reset() {
 
 $(document).on('DOMContentLoaded', function () {
     $('#setCustomBtn').addClass('disabled')
-    $('#resolutionBtn2').click()
+    $('#resolutionBtn1').click()
 })
 
 $(document).ready(async function () {
     createEditors()
     await sleep(1000)
+    p0k = '#p0'
     p1k = '#p1'
     p2k = '#p2'
     p3k = '#p3'
     p4k = '#p4'
     p5k = '#p5'
+    p6k = '#p6'
     
     try {
         window.api.handle('custom-endpoint', (event, d) => function (event, d) {
@@ -132,7 +134,7 @@ $('#saveBtn').click(function () {
     disable()
     getFlyerValues()
     const data = [];
-    data.push(p1, p2, p3, p4, p5)
+    data.push(p0, p1, p2, p3, p4, p5, p6)
     try {
         window.api.send('custom-endpoint', data)
     } catch (error) {
@@ -158,11 +160,13 @@ function disable() {
 }
 
 function parseData(data) {
-    p1 = data[0]
-    p2 = data[1]
-    p3 = data[2]
-    p4 = data[3]
-    p5 = data[4]
+    p0 = data[0]
+    p1 = data[1]
+    p2 = data[2]
+    p3 = data[3]
+    p4 = data[4]
+    p5 = data[5]
+    p6 = data[6]
 }
 
 function sleep(ms) {
@@ -170,35 +174,43 @@ function sleep(ms) {
 }
 
 function getFlyerValues() {
+    p0 = $(p0k).html()
     p1 = $(p1k).html()
     p2 = $(p2k).html()
     p3 = $(p3k).html()
     p4 = $(p4k).html()
     p5 = $(p5k).html()
+    p6 = $(p6k).html()
 }
 
 function getEditorValues() {
+    p0 = e0.html.get()
     p1 = e1.html.get()
     p2 = e2.html.get()
     p3 = e3.html.get()
     p4 = e4.html.get()
     p5 = e5.html.get()
+    p6 = e6.html.get()
 }
 
 function setFlyerValues() {
+    $(p0k).html(p0)
     $(p1k).html(p1)
     $(p2k).html(p2)
     $(p3k).html(p3)
     $(p4k).html(p4)
     $(p5k).html(p5)
+    $(p6k).html(p6)
 }
 
 function setEditorValues() {
+    setEditorValue(e0, p0)
     setEditorValue(e1, p1)
     setEditorValue(e2, p2)
     setEditorValue(e3, p3)
     setEditorValue(e4, p4)
     setEditorValue(e5, p5)
+    setEditorValue(e6, p6)
 }
 
 function setEditorValue(editor, p) {
@@ -209,6 +221,18 @@ function setEditorValue(editor, p) {
 }
 
 function createEditors() {
+    e0 = new FroalaEditor('div#e0', {
+        events: {
+            'input': function (inputEvent) {
+                $(p0k).html(e0.html.get())
+            }
+        },
+        width: 600,
+        height: 150,
+        toolbarSticky: false,
+        toolbarButtons: toolbarBtns
+    });
+    
     e1 = new FroalaEditor('div#e1', {
         events: {
             'input': function (inputEvent) {
@@ -262,6 +286,18 @@ function createEditors() {
         events: {
             'input': function (inputEvent) {
                 $(p5k).html(e5.html.get())
+            }
+        },
+        width: 600,
+        height: 150,
+        toolbarSticky: false,
+        toolbarButtons: toolbarBtns
+    });
+    
+    e6 = new FroalaEditor('div#e6', {
+        events: {
+            'input': function (inputEvent) {
+                $(p6k).html(e6.html.get())
             }
         },
         width: 600,
