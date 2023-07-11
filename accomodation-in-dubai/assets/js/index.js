@@ -1,8 +1,8 @@
 let e0, e1, e2, e3, e4, e5, e6
 let p0, p1, p2, p3, p4, p5, p6
 let p0k, p1k, p2k, p3k, p4k, p5k, p6k
-let w = 595
-let h = 842
+let w = 1240
+let h = 1754
 
 const toolbarBtns = {
     'moreText': {
@@ -30,11 +30,6 @@ function reset() {
     setFlyerValues()
 }
 
-$(document).on('DOMContentLoaded', function () {
-    $('#setCustomBtn').addClass('disabled')
-    $('#resolutionBtn1').click()
-})
-
 $(document).ready(async function () {
     createEditors()
     await sleep(1000)
@@ -45,7 +40,7 @@ $(document).ready(async function () {
     p4k = '#p4'
     p5k = '#p5'
     p6k = '#p6'
-    
+
     try {
         window.api.handle('custom-endpoint', (event, d) => function (event, d) {
             if (d === undefined) {
@@ -66,55 +61,32 @@ $(document).ready(async function () {
     enable()
 })
 
-const actual = 2
-$('#resolutionBtn1').click(function () {
-    $('#mainDiv').width(595 - actual)
-    $('#mainDiv').height(842 - actual)
-    $('#mainContainer').width(595 + 26 - actual)
-    w = 595
-    h = 842
-    $('#resHeader').text('Resolution (595 x 842)')
-})
-
-$('#resolutionBtn2').click(function () {
-    $('#mainDiv').width(794 - actual)
-    $('#mainDiv').height(1123 - actual)
-    $('#mainContainer').width(794 + 26 - actual)
-    w = 794
-    h = 1123
-    $('#resHeader').text('Resolution (794 x 1123)')
-})
-
-$('#resolutionBtn3').click(function () {
-    $('#mainDiv').width(1240 - actual)
-    $('#mainDiv').height(1754 - actual)
-    $('#mainContainer').width(1240 + 26 - actual)
-    w = 1240
-    h = 1754
-    $('#resHeader').text('Resolution (1240 x 1754)')
-})
-
-$('#setCustomBtn').click(function () {
-    let newW = Number($('#widthInput').val())
-    let newH = Number($('#heightInput').val())
-    $('#mainDiv').width(newW - actual)
-    $('#mainDiv').height(newH - actual)
-    $('#mainContainer').width(newW + 26 - actual)
-    w = newW
-    h = newH
-    $('#resHeader').text(`Resolution (${w} x ${h})`)
-})
-
-$('#customCheckbox').click(function () {
-    if ($('#customCheckbox').is(':checked')) {
-        $('#widthInput').prop('disabled', false)
-        $('#heightInput').prop('disabled', false)
-        $('#setCustomBtn').removeClass('disabled')
-    } else {
-        $('#widthInput').prop('disabled', true)
-        $('#heightInput').prop('disabled', true)
-        $('#setCustomBtn').addClass('disabled')
+$('#bgBtn').click(function () {
+    let input = document.createElement('input')
+    input.type = 'file'
+    input.accept = 'image/png'
+    input.onchange = e => {
+        // getting a hold of the file reference
+        let file = e.target.files[0]
+        if (file.type !== 'image/png') {
+            alert('Only PNG image files supported. Please choose a different image file or covert to PNG.')
+            return
+        }
+        // setting up the reader
+        let reader = new FileReader()
+        reader.readAsDataURL(file) // this is reading as data url
+        // here we tell the reader what to do when it's done reading...
+        reader.onload = readerEvent => {
+            let content = readerEvent.target.result // this is the content!
+            document.querySelector('#mainDiv').style.backgroundImage = 'url(' + content + ')'
+            try {
+                window.api.send('custom-endpoint', content)
+            } catch (error) {
+                console.error(error)
+            }
+        }
     }
+    input.click();
 })
 
 $('#imgBtn').click(function () {
@@ -232,7 +204,7 @@ function createEditors() {
         toolbarSticky: false,
         toolbarButtons: toolbarBtns
     });
-    
+
     e1 = new FroalaEditor('div#e1', {
         events: {
             'input': function (inputEvent) {
@@ -293,7 +265,7 @@ function createEditors() {
         toolbarSticky: false,
         toolbarButtons: toolbarBtns
     });
-    
+
     e6 = new FroalaEditor('div#e6', {
         events: {
             'input': function (inputEvent) {

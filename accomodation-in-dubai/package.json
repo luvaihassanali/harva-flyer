@@ -10,6 +10,7 @@
   "dependencies": {
     "electron": "^24.4.0",
     "electron-packager": "^17.1.1",
-    "electron-store": "^8.1.0"
+    "electron-store": "^8.1.0",
+    "fs": "^0.0.1-security"
   }
 }

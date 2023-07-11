@@ -1,4 +1,8 @@
 .dim {
-  /*background-color: rgba(255,255,255,0.75);*/
+  background-color: rgba(255,255,255,0.75);
+}
+
+.regWeight {
+  font-weight: 400;
 }
 

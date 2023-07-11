@@ -11,96 +11,96 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
-<body>
-    <div id="controlDiv" style="margin-left: 12px;"><a class="btn btn-primary disabled me-2 btn-disable grey" role="button" id="imgBtn">Download Image</a><a class="btn btn-primary disabled ms-2 me-2 btn-disable grey" role="button" id="saveBtn">Save Template</a><a class="btn btn-primary disabled ms-2 btn-disable grey" role="button" id="refreshBtn">Refresh</a>
-        <h5 id="resHeader" style="margin-top: 8px;">Resolution (595 x 842)</h5>
-        <div class="btn-group" role="group"><button class="btn btn-primary disabled btn-disable" id="resolutionBtn1" type="button" style="width: 120px;">595 x 842</button><button class="btn btn-primary disabled btn-disable" id="resolutionBtn2" type="button">794 x 1123</button><button class="btn btn-primary disabled btn-disable" id="resolutionBtn3" type="button" style="width: 120px;">1240 x 1754</button></div>
-        <h6 style="margin-top: 12px;"><input type="checkbox" id="customCheckbox" style="margin-right: 6px;"><span>Custom</span><button class="btn btn-success btn-sm disabled" id="setCustomBtn" type="button" style="margin-left: 6px;margin-top: -4px;">Set</button></h6>
-        <div class="input-group" style="width: 192px;"><span class="input-group-text" style="width: 72px;height: 32px;">Width</span><input class="form-control" type="text" id="widthInput" style="height: 32px;" disabled="" placeholder="595"></div>
-        <div class="input-group" style="width: 192px;margin-bottom: 8px;"><span class="input-group-text" style="width: 72px;height: 32px;">Height</span><input class="form-control" type="text" id="heightInput" style="height: 32px;" disabled="" placeholder="842"></div>
-        <div id="e0">
-            <p>Please wait...</p>
-        </div>
-        <div id="e1">
-            <p>Please wait...</p>
-        </div>
-        <div id="e2">
-            <p>Please wait...</p>
-        </div>
-        <div id="e3">
-            <p>Please wait...</p>
-        </div>
-        <div id="e4">
-            <p>Please wait...</p>
-        </div>
-        <div id="e5">
-            <p>Please wait...</p>
-        </div>
-        <div id="e6">
-            <p>Please wait...</p>
+<body style="font-weight: 800;">
+    <div id="controlDiv" style="margin-left: 12px;"><a class="btn btn-primary disabled me-2 btn-disable grey mt-3" role="button" id="imgBtn">Download image</a><a class="btn btn-primary disabled ms-2 me-2 btn-disable grey mt-3" role="button" id="bgBtn">Change background</a><a class="btn btn-primary disabled ms-2 me-2 btn-disable grey mt-3" role="button" id="saveBtn">Save template</a><a class="btn btn-primary disabled ms-2 btn-disable grey mt-3" role="button" id="refreshBtn">Refresh</a>
+        <h6 class="text-start mt-1" id="note" style="font-style: italic;">Note: Some actions like backspace, using buttons on text editor, or adjusting images do not update the flyer.<br>To force refresh press spacebar and backspace key on text editor, or delete and retype a character, or use the Refresh button.</h6>
+        <div class="regWeight">
+            <div id="e0" class="mt-3">
+                <p>Please wait...</p>
+            </div>
+            <div id="e1">
+                <p>Please wait...</p>
+            </div>
+            <div id="e2">
+                <p>Please wait...</p>
+            </div>
+            <div id="e3">
+                <p>Please wait...</p>
+            </div>
+            <div id="e4">
+                <p>Please wait...</p>
+            </div>
+            <div id="e5">
+                <p>Please wait...</p>
+            </div>
+            <div id="e6">
+                <p>Please wait...</p>
+            </div>
         </div>
     </div>
-    <div class="border rounded-0 border-primary" id="mainContainer" style="margin: 12px;width:621px;">
-        <div class="border rounded-0" id="mainDiv" style="width: 595px;height: 842px;margin: 12px;color: var(--bs-blue);background: url(&quot;assets/img/bg.jpg&quot;);">
-            <div class="row" id="logoRow">
-                <div class="col" id="p0"><img class="img-fluid" src="assets/img/logo.png" style="padding-top: 1rem;padding-right: 3rem;padding-left: 3rem;padding-bottom: 1rem;"></div>
-            </div>
-            <div class="row dim" id="headerRow">
-                <div class="col text-center">
-                    <h1 class="display-6" id="p1" style="font-weight: 400;">ACCOMODATION IN DUBAI</h1>
+    <div class="border rounded-0 border-primary" id="mainContainer" style="margin: 12px;width:1266px;">
+        <div class="border rounded-0" id="mainDiv" style="width: 1240px;height: 1754px;margin: 12px;color: var(--bs-blue);background: url(&quot;assets/img/bg.png&quot;);min-width: 1240px;max-width: 1240px;min-height: 1754px;max-height: 1754px;">
+            <div class="container" style="padding-right: 3rem;padding-left: 3rem;width: 1166px;min-width: 1166px;max-width: 1166px;">
+                <div class="row mb-4 mt-4" id="logoRow">
+                    <div class="col" id="p0"><img class="img-fluid" src="assets/img/logo.png" style="padding-top: 1rem;padding-right: 3rem;padding-left: 3rem;padding-bottom: 1rem;"></div>
                 </div>
-            </div>
-            <div class="row dim" id="pricesRow">
-                <div class="col text-center">
-                    <div class="table-responsive" id="p2">
-                        <table class="table">
-                            <tbody>
-                                <tr>
-                                    <td class="text-center">LANDMARK HOTELS</td>
-                                    <td class="text-start">3 * USD 55</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center">CARLTON HOTELS</td>
-                                    <td class="text-start">4 * USD 75</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center">AVANI HOTELS</td>
-                                    <td class="text-start">4 * USD 140</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center">BEST WESTERN PLUS PEARL CREEK</td>
-                                    <td class="text-start">4 * USD 75</td>
-                                </tr>
-                                <tr class="w-100">
-                                    <td colspan="2">APARTMENTS AND MANY MORE HOTELS AVAILABLE&nbsp;ON REQUEST<br></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <h6 id="p3"><strong><span style="color: black;">Per double room per&nbsp;night rate on bed and breakfast basis</span></strong><br><strong><span style="color: black;">Location: Deira Close&nbsp;to train stations</span></strong><br></h6>
-                </div>
-            </div>
-            <div class="row dim" id="contactRow">
-                <div class="col text-center">
-                    <p id="p4" style="font-size: 18px;">For more details, please contact us on:<br></p>
-                    <div class="table-responsive" id="p5" style="margin-right: 6rem;margin-left: 6rem;">
-                        <table class="table table-sm" id="p5">
-                            <tbody>
-                                <tr>
-                                    <td class="text-start" style="border-width: 0px;font-size: 18px;padding: 0px;padding-top: 12px;">WhatsApp</td>
-                                    <td class="text-end" style="border-width: 0px;font-size: 18px;"><span style="color: black;">+971509215920&nbsp;&nbsp;</span><i class="fab fa-whatsapp text-success" style="font-size: 32px;"></i></td>
-                                </tr>
-                                <tr>
-                                    <td class="text-start" style="border-width: 0px;font-size: 18px;padding: 0px;padding-top: 12px;">Shk Yusuf bhai Badri</td>
-                                    <td class="text-end" style="border-width: 0px;font-size: 18px;"><span style="color: black;">+255786006922&nbsp;&nbsp;</span><i class="fas fa-mobile-alt text-secondary" style="font-size: 32px;padding-right: 4px;padding-left: 4px;"></i></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                <div class="row dim" id="headerRow" style="border-radius: 5rem 5rem 0 0;">
+                    <div class="col text-center">
+                        <h1 class="display-2 mt-5" id="p1" style="font-weight: 400;font-size: 4.5rem;">ACCOMODATION IN DUBAI</h1>
                     </div>
                 </div>
-            </div>
-            <div class="row mt-2" id="imageRow">
-                <div class="col" style="text-align: center;"><img class="img-thumbnail img-fluid" src="assets/img/banner.png" width="458" height="137"></div>
+                <div class="row dim" id="pricesRow">
+                    <div class="col text-center">
+                        <div class="table-responsive mt-4" id="p2" style="font-size: 2rem;">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center">LANDMARK HOTELS</td>
+                                        <td class="text-start">3 * USD 55</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">CARLTON HOTELS</td>
+                                        <td class="text-start">4 * USD 75</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">AVANI HOTELS</td>
+                                        <td class="text-start">4 * USD 140</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">BEST WESTERN PLUS PEARL CREEK</td>
+                                        <td class="text-start">4 * USD 75</td>
+                                    </tr>
+                                    <tr class="w-100">
+                                        <td colspan="2">APARTMENTS AND MANY MORE HOTELS AVAILABLE&nbsp;ON REQUEST<br></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <h6 class="text-center mt-1 mb-3" id="p3" style="font-size: 1.5rem;"><strong><span style="color: black;">Per double room per&nbsp;night rate on bed and breakfast basis</span></strong><br><strong><span style="color: black;">Location: Deira Close&nbsp;to train stations</span></strong><br></h6>
+                    </div>
+                </div>
+                <div class="row dim" id="contactRow" style="border-radius: 0 0 5rem 5rem;">
+                    <div class="col text-center">
+                        <p id="p4" class="mt-5" style="font-size: 2rem">For more details, please contact us on:<br></p>
+                        <div class="table-responsive mb-4" id="p5" style="margin-right: 8rem;margin-left: 8rem;font-size: 2rem;">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td class="text-start" style="padding-top: 12px;">WhatsApp</td>
+                                        <td class="text-end"><span style="color: black;">+971509215920&nbsp;&nbsp;</span><i class="fab fa-whatsapp text-success" style="font-size: 40px;"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start" style="padding-top: 12px;">Shk Yusuf bhai Badri</td>
+                                        <td class="text-end"><span style="color: black;">+255786006922&nbsp;&nbsp;</span><i class="fas fa-mobile-alt text-secondary" style="padding-right: 4px;padding-left: 4px;font-size: 40px;"></i></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="imageRow" style="margin-top: 3.5rem !important;">
+                    <div class="col" id="p6" style="text-align: center;"><img class="img-thumbnail img-fluid border rounded" src="assets/img/banner.png" width="913" height="266"></div>
+                </div>
             </div>
         </div>
     </div>
