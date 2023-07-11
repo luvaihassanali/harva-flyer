@@ -31,7 +31,7 @@ app.on('window-all-closed', function () {
 })
 
 ipcMain.handle('custom-endpoint', async (event, data) => {
-    //storage.clear()
+    //store.clear()
     if (String(data).startsWith('data:image/png;base64,')) {
         let base64Data = data.replace(/^data:image\/png;base64,/, "");
         //console.log(base64Data)
