@@ -31,8 +31,8 @@ app.on('window-all-closed', function () {
 })
 
 ipcMain.handle('custom-endpoint', async (event, data) => {
-    store.clear()
-    if (data.startsWith('data:image/png;base64,')) {
+    //storage.clear()
+    if (String(data).startsWith('data:image/png;base64,')) {
         let base64Data = data.replace(/^data:image\/png;base64,/, "");
         //console.log(base64Data)
         require("fs").writeFile(path.join(__dirname, '/assets/img/bg.png'), base64Data, 'base64', function (err) {
